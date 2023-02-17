@@ -9,19 +9,21 @@ require_once 'functions/notify.php';
 require_once 'functions/user.php';
 require_once 'functions/cart.php';
 
-include "views/includes/_header.php";
 
-$page = $_GET['page'];
+$uri = "?page=";
+$page = array_key_exists('page', $_GET) ? $_GET['page'] : null;
+
+include "views/site/partials/_header.php";
 
 if ($page) {
-    $file = "views/pages/site/$page.php";
+    $file = "views/site/$page.php";
     if (file_exists($file)) {
         include $file;
     } else {
-        include "views/pages/site/error.php";
+        include "views/site/pages/error.php";
     }
 } else {
-    include "views/pages/site/home.php";
+    include "views/site/pages/home.php";
 }
 
-include "views/includes/_footer.php";
+include "views/site/partials/_footer.php";

@@ -3,27 +3,38 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once 'functions/db.php';
-require_once 'functions/session.php';
-require_once 'functions/notify.php';
-require_once 'functions/user.php';
-require_once 'functions/cart.php';
+define("ROOT", dirname(__FILE__, 1));
+const CONFIG = ROOT . '/config';
+require_once CONFIG . '/define.php';
+require_once CONFIG . '/firewall.php';
 
+require_once FUNCTIONS . '/db.php';
+require_once FUNCTIONS . '/session.php';
+require_once FUNCTIONS . '/notify.php';
+require_once FUNCTIONS . '/user.php';
+require_once FUNCTIONS . '/cart.php';
 
-$uri = "?page=";
-$page = array_key_exists('page', $_GET) ? $_GET['page'] : null;
+verify();
+firewall();
+create();
+login();
+update();
 
-include "views/site/partials/_header.php";
+include SITE_PARTIALS . "/_header.php";
 
-if ($page) {
-    $file = "views/site/$page.php";
+if (PAGE) {
+    $file = SITE_PAGE . "/" . PAGE . ".php";
     if (file_exists($file)) {
         include $file;
     } else {
-        include "views/site/pages/error.php";
+        include SITE_PAGE . "/error.php";
     }
 } else {
-    include "views/site/pages/home.php";
+    include SITE_PAGE . "/home.php";
 }
 
-include "views/site/partials/_footer.php";
+if (http_response_code() !== 302) {
+    showNotify();
+}
+
+include SITE_PARTIALS . "/_footer.php";

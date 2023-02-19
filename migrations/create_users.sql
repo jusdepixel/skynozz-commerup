@@ -1,0 +1,2 @@
+INSERT INTO commerup.users (id, email, password, phone, firstname, lastname, address, zip, city, admin) VALUES (1, 'admin@domain.com', '$2y$10$5q092QxLRjqBgdpRcLcvkeAr5el8DElmBZE9aFf8/iFVV2423oS9i', '42 42 42 42 42', 'Admin', 'ADMINISTRATOR', '42, Admin road', '42000', 'ADMIN', 1);
+INSERT INTO commerup.users (id, email, password, phone, firstname, lastname, address, zip, city, admin) VALUES (2, 'user@domain.com', '$2y$10$8WZBZ7DNzeqFdSHgpe76pes71RB3uj1KWc9d7BxMML2ZNAH/e.63e', '42 42 42 42 42', 'User', 'USER', '42, User road', '42000', 'USER', 0);

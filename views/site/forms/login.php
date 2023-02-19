@@ -1,3 +1,9 @@
+<?php
+    if (!array_key_exists('user_login', $_POST)) {
+        $_POST['login_email'] = "admin@domain.com";
+        $_POST['login_password'] = "admin";
+    }
+?>
 <h4 class="mb-3">Je m'identifie</h4>
 <div class="col-12">
     <?= input("Email", "login_email", "email") ?>

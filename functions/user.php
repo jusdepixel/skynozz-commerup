@@ -191,6 +191,7 @@ function login(): void
                 );
                 Header('Location: /user/account', 302);
             } else {
+                $_POST['login_password'] = '';
                 setNotify(
                     "danger",
                     "Erreur de connexion !",
@@ -199,6 +200,7 @@ function login(): void
                 Header("HTTP/1.1 403 Unauthorized");
             }
         } else {
+            $_POST['login_password'] = '';
             setNotify(
                 "danger",
                 "Erreur de connexion !",

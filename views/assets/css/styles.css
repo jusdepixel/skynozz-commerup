@@ -1,0 +1,89 @@
+@import "roboto-font.css";
+@import "bootstrap.css";
+@import "bootstrap-icons.css";
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+}
+
+.container {
+    padding-bottom: 100px;
+}
+
+.bg-commerup {
+    position: fixed;
+    bottom: -280px;
+    right: -320px;
+    opacity: 0.04;
+    z-index: -1;
+}
+.bg-commerup img {
+    width: 800px;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 100;
+    text-transform: none;
+    margin-right: 4px;
+}
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer .navbar-brand small {
+    position: relative;
+    top: -11px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+footer .nav-item .nav-link {
+    text-transform: none;
+}
+
+h1 {
+    font-weight: 100;
+}
+h4 {
+    font-weight: 700;
+}
+
+.form-control {
+    font-weight: 700;
+}
+
+.btn {
+    height: 50px;
+}
+.btn > i {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+.nav-link > i {
+    position: relative;
+    top: 1px;
+    font-size: 1.2rem;
+}
+
+.toast-container {
+    top: 108px;
+}
+.toast {
+    border: 0;
+}
+.toast .alert {
+    border-width: 4px 0 0 0;
+}
+
+.alert .bi {
+    font-size: 1.6rem;
+    line-height: 1rem;
+}

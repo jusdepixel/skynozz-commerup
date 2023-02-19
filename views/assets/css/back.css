@@ -1,0 +1,49 @@
+@import "root.css";
+
+.navbar {
+    position: fixed;
+    width: 336px;
+    top: 0;
+    bottom: 0;
+    align-items: start;
+}
+.navbar-brand {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.navbar-brand span {
+    position: absolute;
+    top: 38px;
+    left: 127px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.navbar-nav {
+    height: 100%
+}
+.navbar-nav .nav-item {
+    padding-left: 40px;
+}
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    text-transform: none;
+}
+.navbar-nav .nav-link span {
+    color: white;
+}
+
+.container {
+    padding-left: 366px;
+    margin-left: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    bottom: 24px;
+    text-align: center;
+}

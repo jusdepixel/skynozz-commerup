@@ -16,25 +16,36 @@ require_once FUNCTIONS . '/cart.php';
 
 verify();
 firewall();
-create();
-login();
-update();
 
-include SITE_PARTIALS . "/_header.php";
+if (IS_ADMIN) {
+    $page = ADMIN_PAGES;
+    $partials = ADMIN_PARTIALS;
+
+
+} else {
+    $page = SITE_PAGES;
+    $partials = SITE_PARTIALS;
+
+    create();
+    login();
+    update();
+}
+
+include $partials . "/_header.php";
 
 if (PAGE) {
-    $file = SITE_PAGE . "/" . PAGE . ".php";
+    $file = $page . "/" . PAGE . ".php";
     if (file_exists($file)) {
         include $file;
     } else {
-        include SITE_PAGE . "/error.php";
+        include $page . "/error.php";
     }
 } else {
-    include SITE_PAGE . "/home.php";
+    include $page . "/home.php";
 }
 
 if (http_response_code() !== 302) {
     showNotify();
 }
 
-include SITE_PARTIALS . "/_footer.php";
+include $partials . "/_footer.php";

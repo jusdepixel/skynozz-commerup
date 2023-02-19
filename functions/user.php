@@ -5,6 +5,11 @@ function isAuthenticated(): bool
     return (bool)getSession()['id'];
 }
 
+function isAdmin(): bool
+{
+    return (bool)getSession()['user']['admin'] == 1;
+}
+
 function verify(): void
 {
     if (isAuthenticated()) {
@@ -24,7 +29,7 @@ function getMe(): ?array
     global $mysqli;
 
     $sql = $mysqli->query("
-            SELECT id, email, firstname, lastname, address, zip, city, phone 
+            SELECT id, email, firstname, lastname, address, zip, city, phone, admin 
             FROM users 
             WHERE id = " . getSession()['id']
     );

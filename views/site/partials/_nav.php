@@ -62,6 +62,15 @@
                                     Mes commandes
                                 </a>
                             </li>
+                            <?php if (isAdmin()) { ?>
+                                <li>
+                                    <a class="dropdown-item"
+                                       target="_blank"
+                                       href="/admin/dashboard">
+                                       Administration
+                                    </a>
+                                </li>
+                            <?php } ?>
                             <li>
                                 <a class="dropdown-item <?= PAGE === 'user/authenticate' ? 'active' : '' ?>"
                                    href="/user/logout">

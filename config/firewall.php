@@ -11,6 +11,14 @@ const ROUTES_LOGGED = [
 ];
 
 /**
+ * Routes où l'utilisateur doit être connecté et administrateur
+ */
+const ROUTES_ADMIN = [
+    'dashboard',
+    'users',
+];
+
+/**
  * Routes où l'user doit ne PAS être connecté
  */
 const ROUTES_NOT_LOGGED = [
@@ -18,12 +26,15 @@ const ROUTES_NOT_LOGGED = [
 ];
 
 function firewall(): void {
+
     if (getSession()['id']) {
-        if (in_array(PAGE, ROUTES_NOT_LOGGED)) {
+        if (IS_ADMIN && !isAdmin() ||
+            in_array(PAGE, ROUTES_NOT_LOGGED)) {
             Header('Location: /user/account');
         }
     } else {
-        if (in_array(PAGE, ROUTES_LOGGED)) {
+        if (in_array(PAGE, ROUTES_LOGGED) ||
+            in_array(PAGE, ROUTES_ADMIN)) {
             Header('Location: /user/authenticate');
         }
     }

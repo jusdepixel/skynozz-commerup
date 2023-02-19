@@ -34,21 +34,6 @@ body {
     margin-right: 10px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-footer .navbar-brand small {
-    position: relative;
-    top: -11px;
-    font-weight: 700;
-    font-size: 0.8rem;
-}
-footer .nav-item .nav-link {
-    text-transform: none;
-}
-
 h1 {
     font-weight: 100;
 }

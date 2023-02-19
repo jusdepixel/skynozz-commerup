@@ -1,20 +1,28 @@
 <?php
-
 session_start();
+initSession();
 
-$_SESSION['id'] = null;
-$_SESSION['cart'] = null;
+function initSession():void
+{
+    if (!array_key_exists('id', getSession())) {
+        setSession('id', null);
+        setSession('cart', null);
+    }
+}
 
-function getSession() {
+function getSession(): array
+{
     return $_SESSION;
 }
 
-function setSession($key, $value) {
+function setSession($key, $value): array
+{
     $_SESSION[$key] = $value;
 
     return getSession();
 }
 
-function unsetSession($key) {
-    unset($_SESSION[$key]);
+function unsetSession($key): void
+{
+    setSession($key, null);
 }

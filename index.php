@@ -11,24 +11,19 @@ require_once CONFIG . '/firewall.php';
 require_once FUNCTIONS . '/db.php';
 require_once FUNCTIONS . '/session.php';
 require_once FUNCTIONS . '/notify.php';
-require_once FUNCTIONS . '/user.php';
-require_once FUNCTIONS . '/cart.php';
+require_once FUNCTIONS . '/field.php';
+require_once FUNCTIONS . '/package.php';
 
+loading();
 verify();
 firewall();
 
 if (IS_ADMIN) {
     $page = ADMIN_PAGES;
     $partials = ADMIN_PARTIALS;
-
-
 } else {
     $page = SITE_PAGES;
     $partials = SITE_PARTIALS;
-
-    create();
-    login();
-    update();
 }
 
 include $partials . "/_header.php";

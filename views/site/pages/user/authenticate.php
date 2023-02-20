@@ -1,5 +1,3 @@
-<?php require_once 'functions/field.php'; ?>
-
 <h1 class="mb-5">Créez votre compte CommerUp ou identifiez-vous !</h1>
 <div class="row">
     <div class="col-lg-6 col-sm-12">

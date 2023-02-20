@@ -14,9 +14,31 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/users" class="nav-link <?= PAGE === "users" ? 'active' : '' ?>">
+            <a href="/admin/user/index" class="nav-link
+                <?= (
+                    PAGE === "user/index" ||
+                    PAGE === "user/create" ||
+                    PAGE === "user/update" ||
+                    PAGE === "user/delete"
+                    ) ? 'active' : ''
+                ?>
+            ">
                 <i class="bi bi-people me-1"></i>
                 Utilisateurs
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/product/index" class="nav-link
+                <?= (
+                PAGE === "product/index" ||
+                PAGE === "product/create" ||
+                PAGE === "product/update" ||
+                PAGE === "product/delete"
+            ) ? 'active' : ''
+            ?>
+            ">
+                <i class="bi bi-database me-1"></i>
+                Produits
             </a>
         </li>
         <li class="nav-item mt-5">

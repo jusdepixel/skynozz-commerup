@@ -41,9 +41,29 @@
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: 24px;
     left: 0;
     width: 100%;
-    bottom: 24px;
     text-align: center;
+}
+
+.container {
+    padding-left: 326px;
+    margin-left: auto;
+}
+
+h1 {
+    float: left;
+}
+
+.nav-btn-top {
+    float: right;
+}
+.nav-btn-top i {
+    position: relative;
+    top: 2px;
+}
+
+.clear {
+    clear: both;
 }

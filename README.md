@@ -9,10 +9,14 @@ Créer sa première feature
 - Modifier l'accès à la base de données dans /functions/db.php
 - Exécuter les migrations SQL contenues dans /migrations
 
+### Pour commencer
+Comprendre la structure/arborescence du CMS  
+S'intéresser plus particulièrement au package User, sa table SQL, ses fonctions et ses interfaces site / administration
+
 ***
 
 ### Exercice
-En t'inspirant du package "User", crée le package suivant :
+Crée le package suivant :
 
 ##### Package Product
 Ce package aura pour champs :

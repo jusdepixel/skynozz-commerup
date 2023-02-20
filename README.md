@@ -5,7 +5,7 @@ Créer sa première feature
 
 ### Préparation
 - Cloner ce repository
-- Créer son repository 
+- Créer ton repository 
 - Modifier l'accès à la base de données dans /functions/db.php
 - Exécuter les migrations SQL contenues dans /migrations
 
